@@ -1,17 +1,11 @@
 FROM joshdev/alpine-oraclejdk8:8u102
 
+ADD sbt.boot /drone/sbt.boot
+
 # Set environment
 ENV SBT_HOME /usr/lib/sbt
 ENV PATH $PATH:$SBT_HOME/bin
 ENV sbt.boot.properties /drone/sbt.boot
-
-RUN mkdir /drone
-RUN cat > /drone/sbt.boot << EOF
-[boot]
-directory: /drone/.sbt
-[ivy]
-ivy-home: /drone/.ivy2
-EOF
 
 RUN apk add --no-cache bash \
   && apk add --no-cache --virtual=build-dependencies wget ca-certificates \
