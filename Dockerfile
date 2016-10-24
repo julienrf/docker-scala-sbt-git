@@ -13,6 +13,5 @@ RUN apk add --no-cache bash \
   && cd /usr/lib \
   && wget -q --no-cookies https://dl.bintray.com/sbt/native-packages/sbt/0.13.12/sbt-0.13.12.tgz -O - | gunzip | tar x \
   && apk del build-dependencies \
-  && rm -rf /tmp/*
-
-
+  && rm -rf /tmp/* \
+  && apk add --no-cache nodejs
