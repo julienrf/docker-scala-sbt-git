@@ -1,6 +1,6 @@
 FROM joshdev/alpine-oraclejdk8:8u102
 
-ADD sbt.boot /drone/sbt.boot
+COPY sbt.boot /drone/sbt.boot
 
 # Set environment
 ENV SBT_HOME /usr/lib/sbt
